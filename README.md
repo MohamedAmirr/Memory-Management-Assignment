@@ -5,4 +5,5 @@ input will be some of partitions and its size and some of processes and its size
 - First fit.
 - Best fit.
 - Worst fit.
+
 and then ask for compact all free memory in one block.

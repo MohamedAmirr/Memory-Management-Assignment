@@ -12,15 +12,15 @@ class partition{
         partitionName = _partitionName;
     }
 
-    void setProcessSize(String _processSize) {
-        processName = _processSize;
+    void setPartitionSize(int _partitionSize) {
+        partitionSize = _partitionSize;
     }
 
-    String getProcessName() {
-        return processName;
+    String getPartitionName() {
+        return partitionName;
     }
 
-    int getProcessSize() {
-        return processSize;
+    int getPartitionSize() {
+        return partitionSize;
     }
 }

@@ -3,11 +3,9 @@ package src;
 import java.util.Vector;
 
 public class Compaction {
-    private final Vector<process> processes;
     private final Vector<partition> partitions;
 
-    public Compaction(Vector<process> processes, Vector<partition> partitions) {
-        this.processes = processes;
+    public Compaction(Vector<partition> partitions) {
         this.partitions = partitions;
     }
 

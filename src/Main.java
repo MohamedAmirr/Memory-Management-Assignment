@@ -46,7 +46,7 @@ public class Main {
                 );
                 int compact = in.nextInt();
                 if (compact == 1) {
-                    Compaction compaction = new Compaction(processes,partitions);
+                    Compaction compaction = new Compaction(partitions);
                     compaction.compact();
                     f.first_fit(true);
                 }

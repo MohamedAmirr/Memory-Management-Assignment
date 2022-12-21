@@ -4,14 +4,53 @@ import java.util.Formatter;
 import java.util.Vector;
 
 public class firstFit {
-    Vector<process>processes;
-    Vector<partition>partitions;
+    private final Vector<process>processes;
+    private final Vector<partition>partitions;
     public firstFit(Vector<process>processes, Vector<partition>partitions) {
         this.processes=processes;
         this.partitions=partitions;
     }
 
-    void print(){
+//    public firstFit(Vector<process>processes, Vector<partition>partitions, int choice) {
+//        this.processes=processes;
+//        this.partitions=partitions;
+//        if(choice == 1) {
+//            Compaction c1 = new Compaction(processes,partitions);
+//            c1.compact();
+//        }
+//    }
+
+//    public void compact(){
+//        int totalSize = 0 ;
+//        int size = partitions.size();
+//        for (int i = 0; i < partitions.size(); ++i){
+//            if(partitions.get(i).getReferToProcess() == null) {
+//                totalSize += partitions.get(i).getPartitionSize();
+//                partitions.remove(partitions.get(i));
+//                i--;
+//            }
+//        }
+//        partitions.insertElementAt(new partition("Part" + size, totalSize), partitions.size());
+//
+//        for (int i = 0; i < processes.size(); ++i) {
+//            if (partitions.get(partitions.size()-1).getPartitionSize() >= processes.get(i).getProcessSize() && !processes.get(i).getTaken()) {
+//                processes.get(i).setTaken(true);
+//                if (partitions.get(partitions.size()-1).getPartitionSize() > processes.get(i).getProcessSize()) {
+//                    int sz = partitions.get(partitions.size()-1).getPartitionSize() - processes.get(i).getProcessSize();
+//                    partitions.get(partitions.size()-1).setPartitionSize(processes.get(i).getProcessSize());
+//                    partitions.get(partitions.size()-1).setReferToProcess(processes.get(i).getProcessName());
+//                    partitions.insertElementAt(new partition("Part" + (size+1), sz), i + 1);
+//                    break;
+//                } else if (partitions.get(partitions.size()-1).getPartitionSize() == processes.get(i).getProcessSize()) {
+//                    partitions.get(partitions.size()-1).setPartitionSize(processes.get(i).getProcessSize());
+//                    partitions.get(partitions.size()-1).setReferToProcess(processes.get(i).getProcessName());
+//                    break;
+//                }
+//            }
+//        }
+//        print();
+//    }
+    public void printWithoutCompaction(){
         Formatter fmt = new Formatter();
         fmt.format("%13s %15s %15s", "partitionName", "Partition_size", "processName");
         System.out.println(fmt);
@@ -31,7 +70,10 @@ public class firstFit {
         }
     }
 
-    void first_fit() {
+    public void printWithCompaction(){
+
+    }
+    public void first_fit() {
         for (int i = 0; i < processes.size(); i++) {
             for (int j = 0; j < partitions.size(); j++) {
                 if (partitions.get(j).getPartitionSize() >= processes.get(i).getProcessSize() && !processes.get(i).getTaken()) {
@@ -50,6 +92,6 @@ public class firstFit {
                 }
             }
         }
-        print();
+        printWithoutCompaction();
     }
 }

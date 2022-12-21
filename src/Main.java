@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Vector<process> processes = new Vector<>();
         Vector<partition> partitions = new Vector<>();
@@ -26,7 +26,7 @@ public class Main {
             process process = new process(processName, processSize);
             processes.add(process);
         }
-        int policy = 0;
+        int policy;
         do {
             System.out.println("Select the policy you want to apply:");
             System.out.println("1. First fit.");
@@ -39,21 +39,25 @@ public class Main {
             if (policy == 1) {//First fit
                 firstFit f=new firstFit(processes,partitions);
                 f.first_fit();
+                System.out.println(
+                        "Do you want to compact?\n" +
+                                "1.(yes) " +
+                                "O.W.(no)"
+                );
+                int compact = in.nextInt();
+                if (compact == 1) {
+                    Compaction compaction = new Compaction(processes,partitions);
+                    compaction.compact();
+                    f.first_fit();
+                }
             }
             else if (policy == 2) {//Worst fit
 
             } else if (policy == 3) {//Best fit
 
             }
-            System.out.println(
-                    "Do you want to compact?\n" +
-                            "1.(yes) " +
-                            "O.W.(no)"
-            );
-            int compact = in.nextInt();
-            if (compact == 1) {
 
-            }
+
         } while (policy >= 1 && policy <= 3);
         System.out.println("Terminated!");
 

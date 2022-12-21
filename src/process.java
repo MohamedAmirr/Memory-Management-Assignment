@@ -1,5 +1,4 @@
 package src;
-
 class process {
     private String processName;
     private int processSize;
@@ -34,6 +33,4 @@ class process {
     int getProcessSize() {
         return processSize;
     }
-
-
 }

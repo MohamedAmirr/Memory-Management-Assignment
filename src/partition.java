@@ -5,8 +5,8 @@ class partition{
     private String referToProcess=null;
 
     partition(String _partitionName, int _partitionSize) {
-        partitionName = _partitionName;
-        partitionSize = _partitionSize;
+        this.partitionName = _partitionName;
+        this.partitionSize = _partitionSize;
     }
 
     public partition() {

@@ -38,7 +38,7 @@ public class Main {
 
             if (policy == 1) {//First fit
                 firstFit f=new firstFit(processes,partitions);
-                f.first_fit();
+                f.first_fit(false);
                 System.out.println(
                         "Do you want to compact?\n" +
                                 "1.(yes) " +
@@ -48,7 +48,7 @@ public class Main {
                 if (compact == 1) {
                     Compaction compaction = new Compaction(processes,partitions);
                     compaction.compact();
-                    f.first_fit();
+                    f.first_fit(true);
                 }
             }
             else if (policy == 2) {//Worst fit

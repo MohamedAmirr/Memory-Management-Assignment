@@ -35,9 +35,12 @@ public class Main {
             System.out.println("Any other letter to exit.");
             System.out.print("Select policy: ");
             policy = in.nextInt();
-            if (policy == 1) {//First fit
 
-            } else if (policy == 2) {//Worst fit
+            if (policy == 1) {//First fit
+                First_fit f=new First_fit();
+                f.first_fit(partitions,processes);
+            }
+            else if (policy == 2) {//Worst fit
 
             } else if (policy == 3) {//Best fit
 

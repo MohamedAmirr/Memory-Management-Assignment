@@ -37,8 +37,8 @@ public class Main {
             policy = in.nextInt();
 
             if (policy == 1) {//First fit
-                First_fit f=new First_fit();
-                f.first_fit(partitions,processes);
+                firstFit f=new firstFit(processes,partitions);
+                f.first_fit();
             }
             else if (policy == 2) {//Worst fit
 

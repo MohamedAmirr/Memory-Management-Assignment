@@ -1,17 +1,21 @@
 package src;
-
 class process {
     private String processName;
     private int processSize;
     private boolean taken = false;
-
     process(String _processName, int _processSize) {
         processName = _processName;
         processSize = _processSize;
     }
-    void setTaken(boolean _taken)
-    {
-        taken = _taken;
+    public void setTaken(boolean _taken){
+        this.taken=_taken;
+    }
+    public boolean getTaken(){
+        return this.taken;
+    }
+
+    public process() {
+
     }
 
     void setProcessName(String _processName) {
@@ -29,9 +33,4 @@ class process {
     int getProcessSize() {
         return processSize;
     }
-    Boolean getTaken()
-    {
-        return taken;
-    }
-
 }

@@ -35,11 +35,12 @@ class partition{
     int getPartitionSize() {
         return partitionSize;
     }
-    public String toString() {
+    public String getPartitionInfo() {
         if(referToProcess == null)
         {
-            referToProcess = "External fragment";
+            return partitionName +" (" +partitionSize+ " KB) => " + "External fragment";
         }
-        return partitionName +" (" +partitionSize+ " KB) => " + referToProcess;
+        else
+            return partitionName +" (" +partitionSize+ " KB) => " + referToProcess;
     }
 }

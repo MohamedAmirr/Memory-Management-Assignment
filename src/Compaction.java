@@ -9,14 +9,19 @@ public class Compaction {
         this.partitions = partitions;
     }
 
-    public void compact() {
-        int totalSize = 0;
+    public boolean compact() {
+        int szOfNewPart = 0;
         for (int i = 0; i < partitions.size(); ++i) {
             if (partitions.get(i).getReferToProcess() == null) {
-                totalSize += partitions.get(i).getPartitionSize();
+                szOfNewPart += partitions.get(i).getPartitionSize();
                 partitions.get(i).setPartitionSize(0);
             }
         }
-        partitions.add(new partition("Part" + partitions.size(), totalSize));
+        if (szOfNewPart > 0) {
+            partition newPart = new partition("part" + partitions.size(), szOfNewPart);
+            partitions.add(newPart);
+            return true;
+        }
+        else return false;
     }
 }

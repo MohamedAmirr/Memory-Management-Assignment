@@ -14,10 +14,6 @@ class process {
         return this.taken;
     }
 
-    public process() {
-
-    }
-
     void setProcessName(String _processName) {
         processName = _processName;
     }

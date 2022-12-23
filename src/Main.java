@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Main {
-    static private Scanner in;
     static private Vector<partition> partitions;
     static private Vector<process> processes;
 
@@ -19,9 +18,7 @@ public class Main {
     }
 
     static void clearData() {
-        for (process pr : processes) pr = null;
         processes.clear();
-        for (partition part : partitions) part = null;
         partitions.clear();
     }
 
@@ -35,7 +32,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         processes = new Vector<>();
         partitions = new Vector<>();
         Vector<process> tmpProcesses = new Vector<>();

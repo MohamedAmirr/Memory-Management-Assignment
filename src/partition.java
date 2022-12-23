@@ -9,9 +9,6 @@ class partition{
         this.partitionSize = _partitionSize;
     }
 
-    public partition() {
-
-    }
 
     public void setReferToProcess(String _referToProcess){
         referToProcess=_referToProcess;
